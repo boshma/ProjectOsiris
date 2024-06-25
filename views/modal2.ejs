@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Modal Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Button to trigger the modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-page="page1">Open Page 1</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-page="page2">Open Page 2</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-page="page3">Open Page 3</button>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Content will be dynamically loaded here -->
+        <div id="modalContent"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Event listener for modal show event
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var page = button.data('page'); // Extract info from data-* attributes
+        var modal = $(this);
+
+        // Dynamically load content based on page parameter
+        switch(page) {
+            case 'page1':
+                modal.find('.modal-title').text('Page 1');
+                modal.find('.modal-body #modalContent').html("<%- include('educationPages/evacuation.ejs') %>");
+                break;
+            case 'page2':
+                modal.find('.modal-title').text('Page 2');
+                modal.find('.modal-body #modalContent').html("<%- include('educationPages/evacuation.ejs') %>");
+                break;
+            case 'page3':
+                modal.find('.modal-title').text('Page 3');
+                modal.find('.modal-body #modalContent').html("<%- include('educationPages/evacuation.ejs') %>");
+                break;
+            default:
+                modal.find('.modal-title').text('Page Not Found');
+                modal.find('.modal-body #modalContent').text('Page not found');
+        }
+    });
+</script>
+
+</body>
+</html>

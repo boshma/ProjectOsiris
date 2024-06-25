@@ -1,0 +1,175 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+html{
+  background-color: #f0f0f0;
+  padding-left: -200px;
+}
+
+.footer-banner {
+  display: flex;
+  justify-content: space-between; /* Spaces out child elements evenly */
+  align-items: flex-start; /* Vertically center aligns the contents */
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+
+.resources, .colab, .contact {
+  flex: 1; /* Each section takes equal space */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align for better visual consistency */
+  margin-top: 60px;
+}
+
+
+.source-text {
+  font-weight: bold;
+  margin-top: -54px;
+}
+
+
+.nfpalogo{
+  height: 50px;
+  margin-top: 20px;
+}
+
+.wsulogo{
+  height: 50px;
+}
+
+.microsoftlogo{
+  height: 50px;
+}
+
+
+.wsulogo, .microsoftlogo {
+  height: 80px; /* Larger size for these specific logos */
+  width: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .footer-banner {
+    flex-direction: column; /* Stacks the sections on smaller screens */
+    align-items: center; /* Centers the content in the stacked layout */
+  }
+
+  .resources, .colab, .contact {
+    width: 100%; /* Full width for smaller screens */
+    margin-top: 10px; /* Top margin when stacked */
+    margin-bottom: 10px; /* Bottom margin for spacing */
+  }
+}
+
+
+.subscribe-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9; /* Light gray background */
+  padding: 20px;
+  margin-top: 20px;
+  height: 180px;
+}
+
+.subscribe-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-right: 20px; /* Space between text and button */
+}
+
+.subscribe-button {
+  background-color: #932521; /* Red background for the button */
+  color: white; /* White text */
+  border: none;
+  padding: 6px 18px; 
+  font-size: 20px; /* Slightly larger button text */
+  cursor: pointer; /* Cursor changes to pointer when hovered */
+  border-radius: 5px; /* Rounded corners */
+  margin-left: 10px;
+    margin-top: -12px;
+  
+}
+
+.subscribe-button:hover {
+  background-color: darkred; /* Slightly darker red when hovered */
+  
+}
+
+.subscribeHorizontal {
+  display: flex;            /* Enable flexbox */
+  align-items: center;      /* Center align items vertically */
+  justify-content: center;  /* Center horizontally, can adjust to flex-start if you want them aligned to the left */
+  margin-top: 12px;
+    padding-right: 60px;
+    padding-left: 154px;
+
+}
+.text-block-row {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.text-block {
+  color: white;
+  text-align: center; /* Center the text within the block */
+}
+
+.map-key-item {
+  display: flex;
+  align-items: center; /* Keep items aligned in the center vertically */
+  justify-content: flex-start; /* Align items to the start of the flex container */
+  margin-bottom: 10px; /* Adjust spacing as needed */
+  margin-left: 200px;
+  width: 100%;
+}
+
+/* New media query for large screens */
+@media (min-width: 992px) {
+  .map-key-item {
+    margin-left: 400px; 
+    transform: translateX(-200px); 
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 2599px) {
+  .map-key-item {
+    margin-left: 560px;
+    transform: translateX(-200px); 
+  }
+}
+
+@media (min-width: 2600px) and (max-width: 3099px) {
+  .map-key-item {
+    margin-left: 690px; 
+    transform: translateX(-200px); 
+  }
+}
+@media (min-width: 3100px) {
+  .map-key-item {
+      margin-left: 860px; 
+      transform: translateX(-200px); 
+  }
+}
+
+.color-box {
+  margin-right: 5px; /* Space between the color box and the line image */
+  width: 70px;
+  height: 20px; /* Consistent height for color boxes */
+}
+
+.line-image {
+  width: 100px; /* Consistent width for the line image */
+  height: 2px; /* Consistent height for the line image */
+  margin-right: 10px; /* Space between the line image and the text */
+}
+
+.map-key-text {
+  display: inline-block; /* Ensures text aligns with images */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
